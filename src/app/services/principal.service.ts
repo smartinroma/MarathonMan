@@ -15,7 +15,14 @@ export class PrincipalService {
 
   private events: Event[];
 
-  constructor() { }
+  constructor() {
+    this.events = [
+      {
+        titulo: 'Carrera nocturna', nivel: 'intermedio', fecha: new Date('19-11-2020'),
+        hora: 22.00, imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg'
+      }
+    ]
+  }
 
   getAllEvents(): Promise<Event[]> {
     return new Promise((resolve, reject) => {

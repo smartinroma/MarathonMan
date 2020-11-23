@@ -11,13 +11,13 @@
         </ul>
     </nav>
     <div class="hero"></div>
-    <div class="carreras">
-        <img src="../../assets/images/icono.jpg">
-        <h4>TItulo de evento</h4>
-        <p>Nivel:</p>
-        <p>Fecha:</p>
-        <p>Hora:</p>
-        <p>Zona:</p>
+    <div class="carreras" *ngFor="let evento of arrayEventos">
+        <img [src]="evento.imagen">
+        <h4>{{ evento.titulo }}</h4>
+        <p>Nivel: {{ evento.nivel }}</p>
+        <p>Fecha: {{ evento.fecha }}</p>
+        <p>Hora: {{ evento.hora }}</p>
+        <p>Zona: {{ evento.zona }}</p>
         <p>Creado por:</p>
         <button class="btn btn-sm btn-secondary">Apuntarse</button>
     </div>

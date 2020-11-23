@@ -4,7 +4,8 @@ export interface Event {
   titulo: string;
   nivel: string;
   fecha: Date;
-  hora: number;
+  hora: string;
+  zona: string;
   imagen: string;
 }
 
@@ -18,8 +19,11 @@ export class PrincipalService {
   constructor() {
     this.events = [
       {
-        titulo: 'Carrera nocturna', nivel: 'intermedio', fecha: new Date('19-11-2020'),
-        hora: 22.00, imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg'
+        titulo: 'Carrera nocturna',
+        nivel: 'intermedio',
+        fecha: new Date('19-11-2020'),
+        hora: '22:00', zona: 'Madrid Sur',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg'
       }
     ]
   }

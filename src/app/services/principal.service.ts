@@ -21,7 +21,7 @@ export class PrincipalService {
       {
         titulo: 'Carrera nocturna',
         nivel: 'intermedio',
-        fecha: new Date('19-11-2020'),
+        fecha: new Date('2020-11-24'),
         hora: '22:00', zona: 'Madrid Sur',
         imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg'
       }

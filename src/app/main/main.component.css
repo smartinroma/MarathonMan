@@ -1,0 +1,23 @@
+nav{
+    background-color: aliceblue;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+nav ul{
+    width: 100%;
+}
+
+nav ul li{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+nav ul li input{
+    text-align: center;
+}

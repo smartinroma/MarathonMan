@@ -10,7 +10,9 @@
             <li>LOG OUT</li>
         </ul>
     </nav>
-    <div class="hero"></div>
+    <div class="hero">
+        <img src="../../assets/images/playa.jpg" alt="">
+    </div>
     <div class="carreras" *ngFor="let evento of arrayEventos">
         <img [src]="evento.imagen">
         <h4>{{ evento.titulo }}</h4>

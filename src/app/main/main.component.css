@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 
+/* .wrapper {
+    width: 800px;
+    margin: 0 auto;
+} */
+
 nav{
     background-color: aliceblue;
     flex-wrap: wrap;
@@ -35,4 +40,12 @@ nav ul li input{
 .carreras p {
     font-weight: bold;
     font-family: 'Sansita Swashed', cursive;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
 }

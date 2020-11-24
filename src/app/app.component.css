@@ -1,3 +1,31 @@
+nav{
+    background-color: #999;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 10px;
+}
+
+nav ul{
+    width: 100%;
+}
+
+nav ul li{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+nav ul li input{
+    text-align: center;
+}
+
+
+
+
 footer{
     background-color: black;
     color: white;
@@ -12,3 +40,4 @@ footer a{
     text-decoration: none;
     color: white;
 }
+

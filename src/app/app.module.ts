@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { EventoFormularioComponent } from './evento-formulario/evento-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    EventoFormularioComponent
+    EventoFormularioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

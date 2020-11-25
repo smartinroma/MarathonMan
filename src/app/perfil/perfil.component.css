@@ -1,0 +1,10 @@
+.wrapper {
+    background-image: url(../../assets/images/estepa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero {
+    width: 100%;
+    height: 550px;
+}

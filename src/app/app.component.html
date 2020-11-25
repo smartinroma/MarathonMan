@@ -1,6 +1,6 @@
 <nav>
     <ul class="menu">
-        <li [routerLink]="['main']" routerLinkActive="activa"></li>
+        <li [routerLink]="['main']" routerLinkActive="activa">INICIO</li>
         <li [routerLink]="['formulario']" routerLinkActive="activa">CREAR EVENTO</li>
         <li>COMENTARIOS / INCIDENCIAS</li>
         <li>ENLACES DE INTERES</li>
@@ -10,5 +10,12 @@
         <li>LOG OUT</li>
     </ul>
 </nav>
-
 <router-outlet></router-outlet>
+<footer>
+    <div class="container">
+        <p>Copyright &copy; 2020 -
+            <a href="">Aviso Legal</a>
+            <a href="">Coockies</a>
+        </p>
+    </div>
+</footer>

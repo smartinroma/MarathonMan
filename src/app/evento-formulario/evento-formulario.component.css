@@ -1,0 +1,17 @@
+.fondo{
+    background-image: url(../../assets/images/amanecer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+form{
+    width: 400px;
+    background-color: antiquewhite;
+    padding: 15px;
+    margin: auto;
+}
+
+form div select{
+    margin-left: 10px;
+}

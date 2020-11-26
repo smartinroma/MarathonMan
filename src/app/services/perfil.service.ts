@@ -20,7 +20,13 @@ export class PerfilService {
   }
 
 
-  addPerfil() { }
+  addPerfil(pPerfil: Usuario) {
+    return new Promise((resolve, reject) => {
+      this.usuarios.push(pPerfil);
+      console.log(this.usuarios);
+
+    });
+  }
 
   editarPerfil() { }
 

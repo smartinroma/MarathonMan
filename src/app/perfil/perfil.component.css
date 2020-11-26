@@ -1,10 +1,36 @@
-.wrapper {
+.hero {
     background-image: url(../../assets/images/estepa.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.hero {
     width: 100%;
     height: 550px;
+}
+
+.perfil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.datos {
+    width: 20%;
+    background-color: #999;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.datos img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+.muro {
+    background-color: #999;
+    border-radius: 10px;
+    width: 77%;
+    margin: 10px;
+    padding: 10px;
 }

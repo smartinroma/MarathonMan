@@ -8,13 +8,20 @@ import { PerfilService } from '../services/perfil.service';
 })
 export class PerfilComponent implements OnInit {
 
+  comentario: string;
+
   constructor(
-    private PerfilService: PerfilService
-  ) { }
+    private perfilService: PerfilService
+  ) {
+    this.comentario = '';
+  }
 
   ngOnInit(): void {
   }
 
+  async onSubmitComentario() {
+    await this.perfilService.addComentario(this.comentario)
+  }
 
 
 }

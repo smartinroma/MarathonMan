@@ -34,3 +34,7 @@
     margin: 10px;
     padding: 10px;
 }
+
+.muro .comentarios #comentario{
+    height: 150px;
+}

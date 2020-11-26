@@ -14,9 +14,11 @@ export interface Usuario {
 export class PerfilService {
 
   private usuarios: Usuario[];
+  arrayComentarios: string[]
 
   constructor() {
     this.usuarios = []
+    this.arrayComentarios = []
   }
 
 
@@ -32,7 +34,13 @@ export class PerfilService {
 
   borrarPerfil() { }
 
-  addComentario() { }
+  addComentario(pComentario: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.arrayComentarios.push(pComentario);
+      resolve('Comentario publicado')
+    })
+
+  }
 
   borrarComentario() { }
 

@@ -7,13 +7,15 @@ import { MainComponent } from './main/main.component';
 import { EventoFormularioComponent } from './evento-formulario/evento-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
+import { EnlacesComponent } from './enlaces/enlaces.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     EventoFormularioComponent,
-    PerfilComponent
+    PerfilComponent,
+    EnlacesComponent
   ],
   imports: [
     BrowserModule,

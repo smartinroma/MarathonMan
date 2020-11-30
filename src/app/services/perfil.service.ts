@@ -21,6 +21,12 @@ export class PerfilService {
     this.arrayComentarios = []
   }
 
+  getAll() {
+    return new Promise((resolve, reject) => {
+      resolve(this.arrayComentarios);
+    });
+  }
+
 
   addPerfil(pPerfil: Usuario) {
     return new Promise((resolve, reject) => {

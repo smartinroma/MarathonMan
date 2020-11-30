@@ -8,6 +8,7 @@ import { EventoFormularioComponent } from './evento-formulario/evento-formulario
 import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { EnlacesComponent } from './enlaces/enlaces.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EnlacesComponent } from './enlaces/enlaces.component';
     MainComponent,
     EventoFormularioComponent,
     PerfilComponent,
-    EnlacesComponent
+    EnlacesComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,

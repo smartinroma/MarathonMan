@@ -1,0 +1,17 @@
+.bloque{
+    background-color:  #e5e8e8 ;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.bloque .nuevo #comentario{
+    width: 99%;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.bloque .nuevo #boton{
+    margin: 20px;
+}
+

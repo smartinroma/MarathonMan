@@ -1,0 +1,27 @@
+.enlaces{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.enlace{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    padding: 30px;
+}
+
+.fondocolor{
+    background-color:  #e5e8e8 ;
+}
+
+.enlace img{
+    width: 40%;
+    border-radius: 5px;
+}
+
+.enlace .texto{
+    width: 55%;
+    float: right;
+}

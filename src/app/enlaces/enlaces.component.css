@@ -24,4 +24,12 @@
 .enlace .texto{
     width: 55%;
     float: right;
+    padding: 40px;
 }
+
+.enlace .texto_izquierda{
+    width: 55%;
+    float: left;
+    padding: 40px;
+}
+

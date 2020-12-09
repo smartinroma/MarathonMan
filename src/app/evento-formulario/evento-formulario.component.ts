@@ -11,7 +11,9 @@ export class EventoFormularioComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private principalService: PrincipalService) {
+  constructor(
+    private principalService: PrincipalService
+  ) {
     this.formulario = new FormGroup({
       imagen: new FormControl('', []),
       titulo: new FormControl('', []),
@@ -26,7 +28,9 @@ export class EventoFormularioComponent implements OnInit {
   }
 
   async onSubmit() {
-    await this.principalService.addEvent(this.formulario.value);
+    const mensaje = await this.principalService.addEvent(this.formulario.value);
+    console.log(mensaje);
+
     this.formulario.reset();
   }
 

@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Event {
@@ -15,30 +16,33 @@ export interface Event {
 export class PrincipalService {
 
   private events: Event[];
+  private baseUrl: string;
 
-  constructor() {
-    this.events = [
-      {
-        titulo: 'Carrera nocturna',
-        nivel: 'intermedio',
-        fecha: new Date('2020-11-24'),
-        hora: '22:00', zona: 'Madrid Sur',
-        imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg'
-      }
-    ]
+  constructor(
+    private httpClient: HttpClient
+  ) {
+    this.baseUrl = 'http://localhost:3000/api/eventos';
+
   }
 
   getAllEvents(): Promise<Event[]> {
     return new Promise((resolve, reject) => {
       resolve(this.events);
     });
+    //return this.httpClient.get<Event[]>(this.baseUrl).toPromise();
   }
 
-  addEvent(pEvent: Event): Promise<string> {
-    return new Promise((resolve, reject) => {
-      this.events.push(pEvent);
-      console.log(this.events);
-    });
+  /*  create(formValues): Promise<Event> {
+     return this.httpClient.post<Event>(this.baseUrl, formValues).toPromise();
+   } */
+
+  addEvent(pEvent: Event): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.post<any>(this.baseUrl, pEvent, httpOptions).toPromise();
   }
 
 

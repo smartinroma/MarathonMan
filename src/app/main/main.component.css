@@ -6,10 +6,15 @@
     padding: 20px;
 }
 
+ .eventos {
+    display: flex; 
+    flex-wrap: wrap; 
+} 
+
 .carreras{
-    width: 300px;
+    width: 23%;
     background-color: #e5e8e8;
-    margin: 10px;
+    margin: 1%;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -21,7 +26,9 @@
 }
 
 .carreras img{
-    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    
 }
 
 .hero {

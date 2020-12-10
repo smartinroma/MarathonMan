@@ -10,13 +10,18 @@ import { Event, PrincipalService } from '../services/principal.service';
 export class MainComponent implements OnInit {
 
   arrayEventos: Event[];
+  //private baseUrl: string;
 
-  constructor(private principalService: PrincipalService) { }
+  constructor(
+    private principalService: PrincipalService) {
+    this.arrayEventos = [];
+    //this.baseUrl = 'http://localhost:3000/api/eventos';
+  }
 
   ngOnInit(): void {
     this.principalService.getAllEvents()
-      .then(eventos => {
-        this.arrayEventos = eventos;
+      .then(response => {
+        this.arrayEventos = response;
       })
       .catch(error => console.log(error));
   }

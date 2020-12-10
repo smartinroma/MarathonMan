@@ -15,7 +15,7 @@ export interface Event {
 })
 export class PrincipalService {
 
-  private events: Event[];
+  //private events: Event[];
   private baseUrl: string;
 
   constructor(
@@ -26,15 +26,14 @@ export class PrincipalService {
   }
 
   getAllEvents(): Promise<Event[]> {
-    return new Promise((resolve, reject) => {
-      resolve(this.events);
-    });
-    //return this.httpClient.get<Event[]>(this.baseUrl).toPromise();
-  }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.get<Event[]>(this.baseUrl, httpOptions).toPromise();
+  };
 
-  /*  create(formValues): Promise<Event> {
-     return this.httpClient.post<Event>(this.baseUrl, formValues).toPromise();
-   } */
 
   addEvent(pEvent: Event): Promise<any> {
     const httpOptions = {
@@ -44,7 +43,5 @@ export class PrincipalService {
     }
     return this.httpClient.post<any>(this.baseUrl, pEvent, httpOptions).toPromise();
   }
-
-
 
 }

@@ -1,0 +1,10 @@
+.wrapper {
+    background-color: #2E2E2E;
+    width: 100%;
+}
+
+.wrapper img {
+    margin: 0 auto;
+    width: 500px;
+    height: 450px;
+}

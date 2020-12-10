@@ -10,6 +10,7 @@ export interface Event {
   imagen: string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,13 +18,11 @@ export class PrincipalService {
 
   //private events: Event[];
   private baseUrl: string;
-  private baseUrl2: string;
 
   constructor(
     private httpClient: HttpClient
   ) {
     this.baseUrl = 'http://localhost:3000/api/eventos';
-    this.baseUrl2 = 'http://localhost:3000/api/comentarios';
   }
 
   getAllEvents(): Promise<Event[]> {
@@ -45,12 +44,6 @@ export class PrincipalService {
     return this.httpClient.post<any>(this.baseUrl, pEvent, httpOptions).toPromise();
   }
 
-  getAllComentarios(): Promise<string[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }
-    return this.httpClient.get<string[]>(this.baseUrl2, httpOptions).toPromise();
-  }
+
+
 }

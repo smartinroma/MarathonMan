@@ -15,8 +15,8 @@ export class MainComponent implements OnInit {
   //private baseUrl: string;
 
   constructor(
-    private principalService: PrincipalService,
-    private perfilService: PerfilService) {
+    private principalService: PrincipalService
+  ) {
     this.arrayEventos = [];
     this.corredoresPorEvento = [];
     //this.baseUrl = 'http://localhost:3000/api/eventos';

@@ -1,7 +1,20 @@
 <div class="bloque">
     <div class="nuevo">
-        <input type="text" placeholder="Escribe un comentario" id="comentario">
-        <input type="submit" value="Publicar" id="boton" class="btn btn-secondary">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-control">
+                <label>Titulo</label>
+                <input type="text" placeholder="Escribe un titulo" class="form-control" formControlName="titulo">
+            </div>
+            <div class="form-control">
+                <label>Comentario</label>
+                <input type="text" placeholder="Escribe un comentario" id="comentario" class="form-control"
+                    formControlName="comentario">
+            </div>
+            <input type="submit" value="Publicar" id="boton" class="btn btn-secondary">
+        </form>
     </div>
-    <div class="publicados"></div>
+    <div class="publicados" *ngFor="let coment of comentarios">
+        <h4>{{coment.titulo}}</h4>
+        <p>{{coment.comentario}}</p>
+    </div>
 </div>

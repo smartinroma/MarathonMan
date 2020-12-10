@@ -30,6 +30,7 @@ export class EventoFormularioComponent implements OnInit {
   async onSubmit() {
     const mensaje = await this.principalService.addEvent(this.formulario.value);
     console.log(mensaje);
+    alert('Evento creado correctamente')
 
     this.formulario.reset();
   }

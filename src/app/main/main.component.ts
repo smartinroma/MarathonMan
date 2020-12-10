@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilService, Usuario } from '../services/perfil.service';
 
 import { Event, PrincipalService } from '../services/principal.service';
 
@@ -10,11 +11,14 @@ import { Event, PrincipalService } from '../services/principal.service';
 export class MainComponent implements OnInit {
 
   arrayEventos: Event[];
+  corredoresPorEvento: Usuario[];
   //private baseUrl: string;
 
   constructor(
-    private principalService: PrincipalService) {
+    private principalService: PrincipalService,
+    private perfilService: PerfilService) {
     this.arrayEventos = [];
+    this.corredoresPorEvento = [];
     //this.baseUrl = 'http://localhost:3000/api/eventos';
   }
 
@@ -24,6 +28,13 @@ export class MainComponent implements OnInit {
         this.arrayEventos = response;
       })
       .catch(error => console.log(error));
+  }
+
+  onClick($event) {
+    //al hacer click, con el usuario logado, se agrega el usuario al evento
+    this.corredoresPorEvento.push($event)
+    console.log(this.corredoresPorEvento);
+
   }
 
 }

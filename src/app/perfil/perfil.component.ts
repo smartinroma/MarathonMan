@@ -20,7 +20,7 @@ export class PerfilComponent implements OnInit {
   }
 
   async onSubmitComentario() {
-    await this.perfilService.addComentario(this.comentario)
+    //await this.perfilService.addComentario(this.comentario)
   }
 
 

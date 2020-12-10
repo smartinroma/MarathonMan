@@ -1,9 +1,14 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Usuario {
-  foto: string;
-  nombre_usuario: string;
-  sexo: string;
+  imagen?: string;
+  nombre: string;
+  apellidos: string;
+  edad?: number;
+  email: string;
+  password: string;
+  telefono?: number;
   nivel: string;
   zona: string;
 }
@@ -14,41 +19,47 @@ export interface Usuario {
 export class PerfilService {
 
   private usuarios: Usuario[];
-  arrayComentarios: string[]
+  //arrayComentarios: string[]
+  private baseUrl: string;
 
-  constructor() {
+  constructor(
+    private httpClient: HttpClient
+  ) {
     this.usuarios = []
-    this.arrayComentarios = []
+    //this.arrayPublicaciones = []
+
+    this.baseUrl = 'http://localhost:3000/api/corredores';
   }
 
-  getAll() {
+  /* getAllPublicaciones() {
     return new Promise((resolve, reject) => {
-      resolve(this.arrayComentarios);
+      resolve(this.arrayPublicaciones);
     });
-  }
+  } */
 
 
-  addPerfil(pPerfil: Usuario) {
-    return new Promise((resolve, reject) => {
-      this.usuarios.push(pPerfil);
-      console.log(this.usuarios);
-
-    });
+  addPerfil(pPerfil: Usuario): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.post<any>(this.baseUrl, pPerfil, httpOptions).toPromise();
   }
 
   editarPerfil() { }
 
   borrarPerfil() { }
 
-  addComentario(pComentario: string): Promise<string> {
+  /* addPublicaciones(pPublicacion: string): Promise<string> {
     return new Promise((resolve, reject) => {
-      this.arrayComentarios.push(pComentario);
+      this.arrayPublicaciones.push(pPublicacion);
       resolve('Comentario publicado')
     })
 
-  }
+  } */
 
-  borrarComentario() { }
+  borrarPublicacion() { }
 
   /* buscarPerfiles() { } */
 

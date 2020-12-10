@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { EnlacesComponent } from './enlaces/enlaces.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
+import { RegistroFormularioComponent } from './registro-formulario/registro-formulario.component';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ComentariosComponent } from './comentarios/comentarios.component';
     EventoFormularioComponent,
     PerfilComponent,
     EnlacesComponent,
-    ComentariosComponent
+    ComentariosComponent,
+    RegistroFormularioComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

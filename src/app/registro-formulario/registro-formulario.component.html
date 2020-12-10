@@ -1,0 +1,42 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="number" class="form-control" formControlName="edad">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label>Teléfono</label>
+        <input type="text" class="form-control" formControlName="telefono">
+    </div>
+    <div class="form-group">
+        <label>Nivel</label>
+        <select formControlName="nivel">Elige un nivel
+            <option value="-1" selected>Elige un nivel</option>
+            <option value="Principiante">Principiante</option>
+            <option value="Intermedio Bajo">Intermedio Bajo</option>
+            <option value="Intermedio">Intermedio</option>
+            <option value="Intermedio Alto">Intermedio Alto</option>
+            <option value="Avanzado">Avanzado</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Zona</label>
+        <input type="text" class="form-control" formControlName="zona">
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-block btn-info">
+</form>

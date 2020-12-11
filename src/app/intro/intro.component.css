@@ -1,37 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
 .intro {
     background-color: #2E2E2E;
     width: 100%;
     height: 625px;
     padding: 20px;
-    display: flex;
-}
-
-h1 {
-    color: white;
-    text-align: center;
     
 }
 
-.imagen img {
-    width: 35%;
-    margin: 90px 0 0 200px;
+.intro h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 80px;
 }
 
-.formulario {
+.elementos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+}
+
+.intro .elementos .imagen{
+    width: 50%;
+}
+
+.intro .elementos .imagen img{
+    width: 100%;
+}
+
+.intro .elementos .formulario{
+    width: 35%;
+    margin: auto;
+}
+
+.intro .elementos .formulario form{
     background-color: #e5e8e8;
     width: 300px;
     height: 300px;
     padding: 10px;
     border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-.formulario p {
+.intro .elementos .formulario p {
     padding: 10px;
 }
 
-.formulario p a {
+.intro .elementos .formulario p a {
     text-decoration: none;
     color: green;
 }

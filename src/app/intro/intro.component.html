@@ -1,3 +1,20 @@
-<div class="wrapper">
-    <img src="../../assets/images/tioSam.jpg" alt="">
+<div class="intro">
+    <h1>MARATHON MAN</h1>
+    <div class="imagen">
+        <img src="../../assets/images/tioSam2.png" alt="">
+    </div>
+    <div class="formulario">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" formControlName="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password" class="form-control">
+            </div>
+            <input type="submit" value="Entrar" class="btn btn-sm btn-secondary">
+            <p>¿Todavía no te has registrado? <a href="">¡Regístrate!</a></p>
+        </form>
+    </div>
 </div>

@@ -21,13 +21,13 @@ export class ComentariosService {
   }
 
 
-  getAllComentarios(): Promise<string[]> {
+  getAllComentarios(): Promise<Coment[]> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.get<string[]>(this.baseUrl2, httpOptions).toPromise();
+    return this.httpClient.get<Coment[]>(this.baseUrl2, httpOptions).toPromise();
   }
 
   addComentario(pComentario): Promise<string> {

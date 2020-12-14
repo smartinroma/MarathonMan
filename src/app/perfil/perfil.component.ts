@@ -20,13 +20,13 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.perfilService.getCorredor()
+    /* this.perfilService.getCorredor()
       .then(response => {
         console.log(response);
 
         //this.arrayCorredores = response;
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error)) */
   }
 
   async onSubmitComentario() {

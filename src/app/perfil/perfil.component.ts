@@ -22,7 +22,9 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
     this.perfilService.getCorredor()
       .then(response => {
-        this.arrayCorredores = response;
+        console.log(response);
+
+        //this.arrayCorredores = response;
       })
       .catch(error => console.log(error))
   }

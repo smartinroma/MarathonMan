@@ -37,15 +37,17 @@ export class PerfilService {
     });
   } */
 
-  getCorredor(): Promise<Usuario> {
+  getAllCorredores(): Promise<Usuario[]> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.get<Usuario>(this.baseUrl, httpOptions).toPromise();
+    return this.httpClient.get<Usuario[]>(this.baseUrl, httpOptions).toPromise();
   }
 
+
+  getCorredorById() { }
 
   addPerfil(pPerfil: Usuario): Promise<any> {
     const httpOptions = {

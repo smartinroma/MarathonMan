@@ -39,4 +39,14 @@ export class ComentariosService {
     return this.httpClient.post<string>(this.baseUrl2, pComentario, httpOptions).toPromise();
   }
 
+  borrarComentario(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-type": "application/json"
+      })
+    }
+    return this.httpClient.delete<any>(this.baseUrl2, httpOptions).toPromise();
+  }
+
+
 }

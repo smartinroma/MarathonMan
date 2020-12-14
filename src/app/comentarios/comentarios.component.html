@@ -16,6 +16,7 @@
     <div class="publicados" *ngFor="let coment of arrayComentarios">
         <h4><strong>{{coment.titulo}}</strong></h4>
         <p>{{coment.comentario}}</p>
-        <button class="btn btn-sm btn-danger"><img src="../../assets/images/cubo.png" alt=""></button>
+        <button (click)="onBorrar" class="btn btn-sm btn-danger"><img src="../../assets/images/cubo.png"
+                alt=""></button>
     </div>
 </div>

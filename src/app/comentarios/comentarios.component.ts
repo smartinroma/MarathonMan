@@ -35,9 +35,11 @@ export class ComentariosComponent implements OnInit {
     const mensaje = await this.comentariosService.addComentario(this.formulario.value);
     console.log(mensaje);
     alert('Comentario publicado correctamente')
-
     this.formulario.reset();
+  }
 
+  onBorrar() {
+    this.comentariosService.borrarComentario();
   }
 
 }

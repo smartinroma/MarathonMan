@@ -14,8 +14,10 @@
                     <label>Password</label>
                     <input type="password" formControlName="password" class="form-control">
                 </div>
-                <input type="submit" value="Entrar" class="btn btn-sm btn-secondary">
-                <p>¿Todavía no te has registrado? <a href="">¡Regístrate!</a></p>
+                <input type="button" value="Entrar" class="btn btn-sm btn-secondary" [routerLink]="['main']"
+                    routerLinkActive="activa">
+                <p>¿Todavía no te has registrado? <a [routerLink]="['registro']"
+                        routerLinkActive="activa">¡Regístrate!</a></p>
             </form>
         </div>
     </div>

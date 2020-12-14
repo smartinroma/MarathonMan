@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'enlaces', component: EnlacesComponent },
   { path: 'comentarios', component: ComentariosComponent },
+  { path: 'registro', component: RegistroFormularioComponent },
   { path: '**', redirectTo: '/main' }
 ];
 

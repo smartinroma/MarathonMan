@@ -15,8 +15,19 @@
     margin: 20px;
 }
 
-.bloque .publicados{
-    background-color: #e5e8e8;
+.bloque .publicados {
+    background-color: white;
     width: 99%;
     padding: 20px;
+    margin: auto;
+}
+
+.bloque .publicados button{
+    width: 3%;
+    float: right;
+    margin-top: -50px;
+}
+
+.bloque .publicados img{
+    width: 90%;
 }

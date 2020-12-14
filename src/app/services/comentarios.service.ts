@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Coment {
+  id: number;
   titulo: string;
   comentario: string
 }
@@ -12,11 +13,13 @@ export interface Coment {
 export class ComentariosService {
 
   private baseUrl2: string;
+  private baseUrl3: string;
 
   constructor(
     private httpClient: HttpClient
   ) {
     this.baseUrl2 = 'http://localhost:3000/api/comentarios';
+
 
   }
 
@@ -39,13 +42,13 @@ export class ComentariosService {
     return this.httpClient.post<string>(this.baseUrl2, pComentario, httpOptions).toPromise();
   }
 
-  borrarComentario(): Promise<any> {
+  borrarComentario(pId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-type": "application/json"
       })
     }
-    return this.httpClient.delete<any>(this.baseUrl2, httpOptions).toPromise();
+    return this.httpClient.delete<any>(this.baseUrl2 + "/" + pId, httpOptions).toPromise();
   }
 
 

@@ -11,6 +11,7 @@ import { RegistroFormularioComponent } from './registro-formulario/registro-form
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/intro' },
   { path: 'intro', component: IntroComponent },
+  { path: 'registro', component: RegistroFormularioComponent },
   { path: 'main', component: MainComponent },
   { path: 'formulario', component: EventoFormularioComponent },
   { path: 'perfil', component: PerfilComponent },

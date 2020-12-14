@@ -1,11 +1,11 @@
 <div class="wrapper">
     <div class="perfil">
-        <div class="datos">
+        <div class="datos" *ngFor="let corredor of arrayCorredores">
             <img src="https://thispersondoesnotexist.com/image">
-            <p>Nombre:</p>
-            <p>Apellidos:</p>
-            <p>Zona:</p>
-            <p>Nivel:</p>
+            <p><strong>Nombre:</strong> {{corredor.nombre}}</p>
+            <p><strong>Apellidos:</strong> {{corredor.apellidos}}</p>
+            <p><strong>Zona:</strong> {{corredor.zona}}</p>
+            <p><strong>Nivel:</strong> {{corredor.nivel}}</p>
         </div>
         <div class="muro">
             <div class="comentarios">

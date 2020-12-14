@@ -18,14 +18,14 @@ export interface Usuario {
 })
 export class PerfilService {
 
-  private usuarios: Usuario[];
-  //arrayComentarios: string[]
+
+  //arrayPublicaciones: string[]
   private baseUrl: string;
 
   constructor(
     private httpClient: HttpClient
   ) {
-    this.usuarios = []
+
     //this.arrayPublicaciones = []
 
     this.baseUrl = 'http://localhost:3000/api/corredores';
@@ -36,6 +36,15 @@ export class PerfilService {
       resolve(this.arrayPublicaciones);
     });
   } */
+
+  getCorredor(): Promise<Usuario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.get<Usuario>(this.baseUrl, httpOptions).toPromise();
+  }
 
 
   addPerfil(pPerfil: Usuario): Promise<any> {

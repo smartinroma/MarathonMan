@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilService } from '../services/perfil.service';
+import { PerfilService, Usuario } from '../services/perfil.service';
 
 @Component({
   selector: 'app-perfil',
@@ -9,14 +9,22 @@ import { PerfilService } from '../services/perfil.service';
 export class PerfilComponent implements OnInit {
 
   comentario: string;
+  arrayCorredores: Usuario[];
 
   constructor(
     private perfilService: PerfilService
   ) {
     this.comentario = '';
+
+    this.arrayCorredores = [];
   }
 
   ngOnInit(): void {
+    this.perfilService.getCorredor()
+      .then(response => {
+        this.arrayCorredores = response;
+      })
+      .catch(error => console.log(error))
   }
 
   async onSubmitComentario() {

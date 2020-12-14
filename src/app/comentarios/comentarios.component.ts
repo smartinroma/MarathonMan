@@ -38,8 +38,10 @@ export class ComentariosComponent implements OnInit {
     this.formulario.reset();
   }
 
-  onBorrar() {
-    this.comentariosService.borrarComentario();
+  async onBorrar(pId) {
+    const mensaje = await this.comentariosService.borrarComentario(pId);
+    console.log(mensaje);
+    alert('Comentario borrado correctamente');
   }
 
 }

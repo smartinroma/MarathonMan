@@ -6,10 +6,10 @@ export interface Usuario {
   imagen?: string;
   nombre: string;
   apellidos: string;
-  edad?: number;
+  edad: number;
   email: string;
   password: string;
-  telefono?: number;
+  telefono: number;
   nivel: string;
   zona: string;
 }
@@ -22,6 +22,7 @@ export class PerfilService {
 
   //arrayPublicaciones: string[]
   private baseUrl: string;
+  private baseUrl2: string;
 
   constructor(
     private httpClient: HttpClient
@@ -30,6 +31,7 @@ export class PerfilService {
     //this.arrayPublicaciones = []
 
     this.baseUrl = 'http://localhost:3000/api/corredores';
+    this.baseUrl2 = 'http://localhost:3000/api/corredores/registro';
   }
 
   /* getAllPublicaciones() {
@@ -63,24 +65,19 @@ export class PerfilService {
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.post<Usuario>(this.baseUrl + "/" + pPerfil, httpOptions).toPromise();
+    return this.httpClient.post<Usuario>(this.baseUrl2, pPerfil, httpOptions).toPromise();
   }
 
-  editarPerfil() { }
+  registro(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/registro`, formValues).toPromise();
+  }
 
-  borrarPerfil() { }
 
-  /* addPublicaciones(pPublicacion: string): Promise<string> {
-    return new Promise((resolve, reject) => {
-      this.arrayPublicaciones.push(pPublicacion);
-      resolve('Comentario publicado')
-    })
 
-  } */
+  login(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+  }
 
-  borrarPublicacion() { }
-
-  /* buscarPerfiles() { } */
 
 }
 

@@ -22,7 +22,6 @@ export class PerfilService {
 
   //arrayPublicaciones: string[]
   private baseUrl: string;
-  private baseUrl2: string;
 
   constructor(
     private httpClient: HttpClient
@@ -31,7 +30,6 @@ export class PerfilService {
     //this.arrayPublicaciones = []
 
     this.baseUrl = 'http://localhost:3000/api/corredores';
-    this.baseUrl2 = 'http://localhost:3000/api/corredores/:corredorId'
   }
 
   /* getAllPublicaciones() {
@@ -50,21 +48,22 @@ export class PerfilService {
   }
 
 
-  getCorredorById(): Promise<Usuario> {
+  getCorredorById(pId): Promise<Usuario> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.get<Usuario>(this.baseUrl2, httpOptions).toPromise();
+    return this.httpClient.get<Usuario>(this.baseUrl + "/" + pId, httpOptions).toPromise();
   }
 
-  addPerfil(pPerfil: Usuario): Promise<any> {
+  addPerfil(pPerfil: Usuario): Promise<Usuario> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }
+<<<<<<< HEAD
     return this.httpClient.post<any>(this.baseUrl + "/" + pPerfil, httpOptions).toPromise();
   }
 
@@ -74,6 +73,9 @@ export class PerfilService {
 
   registro(formValues: any) {
     return this.httpClient.post(`${this.baseUrl}/registro`, formValues).toPromise();
+=======
+    return this.httpClient.post<Usuario>(this.baseUrl + "/" + pPerfil, httpOptions).toPromise();
+>>>>>>> 21843ca7aba3b9fb3eff392b4733ae95e616f6eb
   }
 
   editarPerfil() { }

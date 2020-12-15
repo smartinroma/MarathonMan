@@ -20,12 +20,12 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.perfilService.getCorredorById()
+    /* this.perfilService.getCorredorById()
       .then(response => {
         //this.arrayCorredores = response
 
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error)) */
   }
 
   //getCorredorById() { }

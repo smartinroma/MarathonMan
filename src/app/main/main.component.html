@@ -17,7 +17,10 @@
             <p>Hora: {{ evento.hora }}</p>
             <p>Zona: {{ evento.zona }}</p>
             <p>Creado por:</p>
-            <button class="btn btn-sm btn-secondary" (click)="onClick($event)">Apuntarse</button>
+            <button class="btn btn-sm btn-secondary" (click)="onClickApuntarse()">Apuntarse</button>
+            <br>
+            <br>
+            <p>Corredores apuntados: {{corredoresPorEvento}}</p>
         </div>
     </div>
 </div>

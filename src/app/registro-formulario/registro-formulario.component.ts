@@ -32,21 +32,21 @@ export class RegistroFormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /* async onSubmit() {
+  async onSubmit() {
     const mensaje = await this.perfilService.addPerfil(this.formulario.value);
     console.log(mensaje);
     alert('Usuario creado correctamente')
 
     this.formulario.reset();
 
-  } */
+  }
 
-  onSubmit() {
-    this.perfilService.create(this.formulario.value)
+  /* onSubmit() {
+    this.perfilService.addPerfil(this.formulario.value)
       .then(response => {
         console.log(response);
       })
       .catch(error => console.log(error));
-  }
+  } */
 
 }

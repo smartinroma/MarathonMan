@@ -65,7 +65,15 @@ export class PerfilService {
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.post<any>(this.baseUrl, pPerfil, httpOptions).toPromise();
+    return this.httpClient.post<any>(this.baseUrl + "/" + pPerfil, httpOptions).toPromise();
+  }
+
+  create(formValues) {
+    return this.httpClient.post(this.baseUrl, formValues).toPromise();
+  }
+
+  registro(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/registro`, formValues).toPromise();
   }
 
   editarPerfil() { }

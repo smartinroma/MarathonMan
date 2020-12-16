@@ -26,10 +26,12 @@ export class LoginComponent implements OnInit {
         if (response['error']) {
           this.mensajeError = response['error'];
         } else {
-          console.log(response['token']);
-
+          //console.log(response['token']);
+          localStorage.setItem('token_marathon', response['token']);
+          this.router.navigate(['/corredores']);
         }
       })
+      .catch(error => console.log(error));
   }
 
 }

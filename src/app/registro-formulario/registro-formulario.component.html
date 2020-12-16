@@ -3,18 +3,35 @@
         <div class="form-group">
             <label>Nombre</label>
             <input type="text" class="form-control" formControlName="nombre">
+            <p class="text-danger"
+                *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">
+                El campo nombre es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Apellidos</label>
             <input type="text" class="form-control" formControlName="apellidos">
+            <p class="text-danger"
+                *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">
+                El campo apellidos es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Edad</label>
             <input type="number" class="form-control" formControlName="edad">
+            <p class="text-danger"
+                *ngIf="formulario.get('edad').hasError('edadvalidator') && formulario.get('edad').touched">
+                El campo edad debe ser mayor de {{ formulario.get('edad').errors.edadvalidator.min }}
+            </p>
         </div>
         <div class="form-group">
             <label>Email</label>
             <input type="text" class="form-control" formControlName="email">
+            <p class="text-danger"
+                *ngIf="formulario.get('email').hasError('pattern') && formulario.get('email').touched">
+                El email debe tener un formato correcto
+            </p>
+
         </div>
         <div class="form-group">
             <label>Password</label>
@@ -34,10 +51,17 @@
                 <option value="Intermedio Alto">Intermedio Alto</option>
                 <option value="Avanzado">Avanzado</option>
             </select>
+            <p class="text-danger"
+                *ngIf="formulario.get('nivel').hasError('required') && formulario.get('nivel').touched">
+                El campo nivel es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Zona</label>
             <input type="text" class="form-control" formControlName="zona">
+            <p class="text-danger" *ngIf="formulario.get('zona').hasError('pattern') && formulario.get('zona').touched">
+                El campo zona es obligatorio
+            </p>
         </div>
         <input type="submit" value="Enviar" class="btn btn-block btn-secondary">
     </form>

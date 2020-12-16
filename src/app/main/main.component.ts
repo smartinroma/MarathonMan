@@ -30,9 +30,9 @@ export class MainComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  onClick($event) {
+  onClickApuntarse(pCorredor) {
     //al hacer click, con el usuario logado, se agrega el usuario al evento
-    this.corredoresPorEvento.push($event)
+    this.corredoresPorEvento.push(pCorredor)
     console.log(this.corredoresPorEvento);
 
   }

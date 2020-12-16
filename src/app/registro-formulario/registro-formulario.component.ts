@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PerfilService } from '../services/perfil.service';
+
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-registro-formulario',
@@ -10,6 +12,7 @@ import { PerfilService } from '../services/perfil.service';
 export class RegistroFormularioComponent implements OnInit {
 
   formulario: FormGroup;
+  tipoPassword: string;
 
   constructor(
     private perfilService: PerfilService
@@ -17,19 +20,28 @@ export class RegistroFormularioComponent implements OnInit {
 
     this.formulario = new FormGroup({
       imagen: new FormControl('', []),
-      nombre: new FormControl('', []),
-      apellidos: new FormControl('', []),
-      edad: new FormControl('', []),
-      email: new FormControl('', []),
-      password: new FormControl('', []),
+      nombre: new FormControl('', [Validators.required]),
+      apellidos: new FormControl('', [Validators.required]),
+      edad: new FormControl('', [this.edadValidator]),
+      email: new FormControl('', [Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
+      password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d).{4,8}$/)]),
       telefono: new FormControl('', []),
-      nivel: new FormControl('', []),
-      zona: new FormControl('', [])
+      nivel: new FormControl('', [Validators.required]),
+      zona: new FormControl('', [Validators.required])
     })
+
+    this.tipoPassword = 'password';
 
   }
 
   ngOnInit(): void {
+    this.formulario.get('email')
+      .valueChanges
+      .pipe(debounceTime(1000))
+      .subscribe(value => {
+        console.log(value);
+
+      })
   }
 
   async onSubmit() {
@@ -41,12 +53,20 @@ export class RegistroFormularioComponent implements OnInit {
 
   }
 
-  /* onSubmit() {
-    this.perfilService.addPerfil(this.formulario.value)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => console.log(error));
-  } */
+
+  edadValidator(control: FormControl) {
+    const valor = control.value;
+
+    if (valor === '') return null;
+
+    const MIN = 18;
+
+    if (valor >= 18) {
+      return null;
+    } else {
+      return { edadvalidator: { min: MIN } };
+    }
+  }
+
 
 }

@@ -9,6 +9,10 @@
         <div class="form-group">
             <label>Titulo</label>
             <input type="text" formControlName="titulo" class="form-control">
+            <p class="text-danger"
+                *ngIf="formulario.get('titulo').hasError('required') && formulario.get('titulo').touched">
+                El campo titulo es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Nivel</label>
@@ -20,18 +24,34 @@
                 <option value="Intermedio Alto">Intermedio Alto</option>
                 <option value="Avanzado">Avanzado</option>
             </select>
+            <p class="text-danger"
+                *ngIf="formulario.get('nivel').hasError('required') && formulario.get('nivel').touched">
+                El campo nivel es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Fecha</label>
             <input type="date" formControlName="fecha" class="form-control">
+            <p class="text-danger"
+                *ngIf="formulario.get('fecha').hasError('required') && formulario.get('fecha').touched">
+                El campo fecha es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Hora</label>
             <input type="time" formControlName="hora" class="form-control">
+            <p class="text-danger"
+                *ngIf="formulario.get('hora').hasError('required') && formulario.get('hora').touched">
+                El campo hora es obligatorio
+            </p>
         </div>
         <div class="form-group">
             <label>Zona</label>
             <input type="text" formControlName="zona" class="form-control">
+            <p class="text-danger"
+                *ngIf="formulario.get('zona').hasError('required') && formulario.get('zona').touched">
+                El campo zona es obligatorio
+            </p>
         </div>
 
         <input type="submit" value="Crear" class="btn btn-block btn-secondary">

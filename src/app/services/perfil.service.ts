@@ -59,6 +59,16 @@ export class PerfilService {
     return this.httpClient.get<Usuario>(this.baseUrl + "/" + pId, httpOptions).toPromise();
   }
 
+
+  getPerfilLogado(): Promise<Usuario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem('token_marathon')
+      })
+    }
+    return this.httpClient.get<Usuario>(this.baseUrl + "/perfil", httpOptions).toPromise();
+  }
+
   addPerfil(pPerfil: Usuario): Promise<Usuario> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -78,6 +88,14 @@ export class PerfilService {
     return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
   }
 
+
+  estaLogado() {
+    if (localStorage.getItem("token_marathon")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }
 

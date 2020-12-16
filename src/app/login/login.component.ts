@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(formValues) {
-    console.log('hola');
 
     this.mensajeError = null;
     this.perfilService.login(formValues)

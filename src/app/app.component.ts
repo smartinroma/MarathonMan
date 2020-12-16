@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { PerfilService } from './services/perfil.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
   visible: boolean;
 
   constructor(
-    private router: Router
+    private router: Router,
+    public perfilService: PerfilService
   ) {
     this.visible = false;
 
@@ -34,4 +36,10 @@ export class AppComponent implements OnInit {
     });
 
   }
+
+
+  onSalir() {
+    localStorage.removeItem('token_marathon');
+  }
+
 }

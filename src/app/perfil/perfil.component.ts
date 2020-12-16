@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PerfilService, Usuario } from '../services/perfil.service';
 
 @Component({
@@ -9,26 +10,29 @@ import { PerfilService, Usuario } from '../services/perfil.service';
 export class PerfilComponent implements OnInit {
 
   comentario: string;
-  arrayCorredores: Usuario[];
+  corredor: Usuario;
 
   constructor(
-    private perfilService: PerfilService
+    private perfilService: PerfilService,
+    private router: Router
   ) {
     this.comentario = '';
 
-    this.arrayCorredores = [];
+
   }
 
   ngOnInit(): void {
-    /* this.perfilService.getCorredorById()
+    this.perfilService.getPerfilLogado()
       .then(response => {
-        //this.arrayCorredores = response
+        this.corredor = response
+      })
+      .catch(error => {
+        console.log(error);
 
       })
-      .catch(error => console.log(error)) */
   }
 
-  //getCorredorById() { }
+
 
   async onSubmitComentario() {
     //await this.perfilService.addComentario(this.comentario)

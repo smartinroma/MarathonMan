@@ -27,7 +27,6 @@ export class IntroComponent implements OnInit {
   }
 
   async onSubmit(formValues) {
-    console.log('hola');
     this.mensajeError = null;
     this.perfilService.login(formValues)
       .then(response => {
@@ -35,7 +34,7 @@ export class IntroComponent implements OnInit {
 
         if (response['error']) {
           this.mensajeError = response['error'];
-          console.log(this.mensajeError);
+          alert(this.mensajeError);
 
         } else {
           console.log(response['token']);

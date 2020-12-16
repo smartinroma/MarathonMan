@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -11,17 +12,26 @@ export class AppComponent implements OnInit {
   url: string = '';
   visible: boolean;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.visible = false;
 
   }
 
 
   ngOnInit() {
-    console.log(window.location.pathname);
+    console.log(this.router.url);
+    this.router.events.subscribe((val) => {
+      // see also 
+      if (val instanceof NavigationEnd) {
+        if (this.router.url === "/intro") {
+          this.visible = false
+        } else {
+          this.visible = true
+        }
+      }
+    });
 
-    if (window.location.pathname !== "/intro" && window.location.pathname !== "/") {
-      this.visible = true;
-    }
   }
 }

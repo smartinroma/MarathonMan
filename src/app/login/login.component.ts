@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
+import { ɵangular_packages_platform_browser_platform_browser_d } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { PerfilService } from '../services/perfil.service';
 
@@ -20,13 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(formValues) {
+    console.log('hola');
+
     this.mensajeError = null;
     this.perfilService.login(formValues)
       .then(response => {
+        console.log(response);
+
         if (response['error']) {
           this.mensajeError = response['error'];
+          console.log(this.mensajeError);
+
         } else {
-          //console.log(response['token']);
+          console.log(response['token']);
           localStorage.setItem('token_marathon', response['token']);
           this.router.navigate(['/corredores']);
         }
@@ -35,3 +43,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+

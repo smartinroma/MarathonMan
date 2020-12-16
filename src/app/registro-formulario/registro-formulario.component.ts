@@ -64,7 +64,7 @@ export class RegistroFormularioComponent implements OnInit {
     if (valor >= 18) {
       return null;
     } else {
-      return { edadValidator: { min: MIN } };
+      return { edadvalidator: { min: MIN } };
     }
   }
 

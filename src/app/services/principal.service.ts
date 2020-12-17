@@ -16,7 +16,7 @@ export interface Event {
 })
 export class PrincipalService {
 
-  //private events: Event[];
+  //events: Event[];
   private baseUrl: string;
 
   constructor(
@@ -44,6 +44,22 @@ export class PrincipalService {
     return this.httpClient.post<any>(this.baseUrl, pEvent, httpOptions).toPromise();
   }
 
+  getByEvent(pNivel: string): Promise<Event[]> {
+    return new Promise((resolve, reject) => {
+      const arrayFiltrado = this.events.filter(evento => {
+        return evento.nivel === pNivel;
+      })
+      resolve(arrayFiltrado)
+    })
+  }
+
+  /* getPaisesV(): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      const todosNiveles = this.events.map(evento => evento.nivel);
+      const nivelesSinRepetir = [...new Set(todosNiveles)];
+      resolve(nivelesSinRepetir);
+    })
+  } */
 
 
 }

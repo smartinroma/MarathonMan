@@ -44,14 +44,14 @@ export class PrincipalService {
     return this.httpClient.post<any>(this.baseUrl, pEvent, httpOptions).toPromise();
   }
 
-  getByEvent(pNivel: string): Promise<Event[]> {
+  /* getByEvent(pNivel: string): Promise<Event[]> {
     return new Promise((resolve, reject) => {
       const arrayFiltrado = this.events.filter(evento => {
         return evento.nivel === pNivel;
       })
       resolve(arrayFiltrado)
     })
-  }
+  } */
 
   /* getPaisesV(): Promise<string[]> {
     return new Promise((resolve, reject) => {
@@ -60,6 +60,15 @@ export class PrincipalService {
       resolve(nivelesSinRepetir);
     })
   } */
+
+  getEventoByNivel(pNivel): Promise<Event> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.get<Event>(this.baseUrl + "/nivel/:nivel", httpOptions).toPromise();
+  }
 
 
 }

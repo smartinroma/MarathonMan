@@ -19,6 +19,8 @@ export class MainComponent implements OnInit {
     private principalService: PrincipalService
   ) {
 
+    this.arrayEventos = []
+
     //this.baseUrl = 'http://localhost:3000/api/eventos';
   }
 
@@ -38,11 +40,10 @@ export class MainComponent implements OnInit {
   }
 
   async onChange($event) {
-    if ($event.target.value === -1) {
-      this.arrayEventos = await this.principalService.getAllEvents()
-    } else {
-      this.arrayEventos = await this.principalService.getByEvent($event.target.value)
-    }
+    console.log(this.niveles);
+
+    this.principalService.getEventoByNivel($event.target.value)
+
   }
 
 }

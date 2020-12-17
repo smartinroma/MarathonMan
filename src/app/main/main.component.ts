@@ -13,7 +13,6 @@ export class MainComponent implements OnInit {
   arrayEventos: Event[];
   niveles: string[];
   corredoresPorEvento: Usuario[];
-  //private baseUrl: string;
 
   constructor(
     private principalService: PrincipalService
@@ -21,7 +20,6 @@ export class MainComponent implements OnInit {
 
     this.arrayEventos = []
 
-    //this.baseUrl = 'http://localhost:3000/api/eventos';
   }
 
   ngOnInit(): void {
@@ -44,8 +42,13 @@ export class MainComponent implements OnInit {
 
   async onChange($event) {
     console.log(this.niveles);
+    console.log($event.target.value);
 
-    await this.principalService.getEventoByNivel($event.target.value)
+    if ($event.target.value === 'todos') {
+      this.arrayEventos = await this.principalService.getAllEvents()
+    } else {
+      this.arrayEventos = await this.principalService.getEventoByNivel($event.target.value)
+    }
 
   }
 

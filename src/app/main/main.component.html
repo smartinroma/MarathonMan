@@ -1,11 +1,11 @@
 <div class="wrapper">
     <div class="hero">
-        <!-- <img src="../../assets/images/playa.jpg" alt=""> -->
+        <img src="../../assets/images/heroMain.jpg" alt="">
     </div>
     <div class="filtro">
         <p>Buscar por nivel: </p>
         <select (change)="onChange($event)">
-            <option value="-1" selected>Elige un nivel</option>
+            <option value="todos" selected>Elige un nivel</option>
             <option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option>
         </select>
     </div>

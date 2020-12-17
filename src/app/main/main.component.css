@@ -3,10 +3,10 @@
 .wrapper {
     width: 100%;
     margin: auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
- .eventos {
+.eventos {
     display: flex; 
     flex-wrap: wrap; 
 } 
@@ -39,4 +39,23 @@
     width: 100%;
     height: 600px;
     border-radius: 10px;
+}
+
+.filtro {
+    padding: 10px;
+    background-color: #c1c3c3;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.filtro select {
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.filtro p {
+    color: black;
+    font-weight: bold;
 }

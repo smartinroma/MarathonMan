@@ -45,13 +45,13 @@ export class PrincipalService {
   }
 
 
-  getEventoByNivel(pNivel): Promise<Event> {
+  getEventoByNivel(pNivel: string): Promise<Event[]> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.get<Event>(this.baseUrl + "/nivel/:nivel", httpOptions).toPromise();
+    return this.httpClient.get<Event[]>(this.baseUrl + "/nivel/" + pNivel, httpOptions).toPromise();
   }
 
 

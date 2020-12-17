@@ -28,6 +28,9 @@ export class MainComponent implements OnInit {
     this.principalService.getAllEvents()
       .then(response => {
         this.arrayEventos = response;
+        const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
+        const setTemporal = new Set(arrTemporal)
+        this.niveles = [...setTemporal];
       })
       .catch(error => console.log(error));
   }
@@ -42,7 +45,7 @@ export class MainComponent implements OnInit {
   async onChange($event) {
     console.log(this.niveles);
 
-    this.principalService.getEventoByNivel($event.target.value)
+    await this.principalService.getEventoByNivel($event.target.value)
 
   }
 

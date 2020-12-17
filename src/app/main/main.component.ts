@@ -15,10 +15,12 @@ export class MainComponent implements OnInit {
   corredoresPorEvento: Usuario[];
 
   constructor(
-    private principalService: PrincipalService
+    private principalService: PrincipalService,
+    private perfilService: PerfilService
   ) {
 
     this.arrayEventos = []
+    this.corredoresPorEvento = []
 
   }
 
@@ -33,9 +35,14 @@ export class MainComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  onClickApuntarse(pCorredor) {
+  async onClickApuntarse(pCorredor) {
     //al hacer click, con el usuario logado, se agrega el usuario al evento
-    this.corredoresPorEvento.push(pCorredor)
+    this.perfilService.getPerfilLogado()
+      .then(response => {
+        this.corredoresPorEvento.push(pCorredor)
+        //console.log(response);
+      })
+      .catch(error => console.log(error))
     console.log(this.corredoresPorEvento);
 
   }

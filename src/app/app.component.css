@@ -7,6 +7,12 @@ nav{
     border-radius: 10px;
 }
 
+nav img{
+    width: 8%;
+    float:left;
+    margin: 10px 0px 15px 10px;
+}
+
 nav ul{
     width: 100%;
 }
@@ -19,12 +25,6 @@ nav ul li{
     margin: 10px;
     cursor: pointer;
 }
-
-nav ul li input{
-    text-align: center;
-}
-
-
 
 
 footer{

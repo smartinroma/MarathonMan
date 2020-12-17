@@ -18,10 +18,6 @@ export class MainComponent implements OnInit {
   constructor(
     private principalService: PrincipalService
   ) {
-<<<<<<< HEAD
-=======
-
->>>>>>> a1a138f597cc6fdd29b68ab676ba65cf8f6d3e74
     //this.baseUrl = 'http://localhost:3000/api/eventos';
   }
 

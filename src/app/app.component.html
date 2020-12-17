@@ -2,11 +2,8 @@
     <ul class="menu">
         <li [routerLink]="['main']" routerLinkActive="activa">INICIO</li>
         <li [routerLink]="['formulario']" routerLinkActive="activa">CREAR EVENTO</li>
-        <li [routerLink]="['comentarios']" routerLinkActive="activa">COMENTARIOS / INCIDENCIAS</li>
+        <li [routerLink]="['comentarios']" routerLinkActive="activa">COMENTARIOS</li>
         <li [routerLink]="['enlaces']" routerLinkActive="activa">ENLACES DE INTERES</li>
-        <li>
-            <input type="text" placeholder="Buscar">
-        </li>
         <li [routerLink]="['perfil']" routerLinkActive="activa">PERFIL</li>
         <li *ngIf="perfilService.estaLogado()" (click)="onSalir()" [routerLink]="['/intro']">LOG OUT</li>
     </ul>

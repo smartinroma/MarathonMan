@@ -2,6 +2,13 @@
     <div class="hero">
         <!-- <img src="../../assets/images/playa.jpg" alt=""> -->
     </div>
+    <div class="filtro">
+        <p>Búscar por nivel: </p>
+        <select (change)="onChange($event)">
+            <option value="-1" selected>Elige un nivel</option>
+            <option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option>
+        </select>
+    </div>
     <div class="eventos">
         <div class="carreras" *ngFor="let evento of arrayEventos">
             <!-- <img [src]="evento.imagen"> -->

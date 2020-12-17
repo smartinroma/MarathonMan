@@ -11,12 +11,17 @@ import { Event, PrincipalService } from '../services/principal.service';
 export class MainComponent implements OnInit {
 
   arrayEventos: Event[];
+  niveles: string[];
   corredoresPorEvento: Usuario[];
   //private baseUrl: string;
 
   constructor(
     private principalService: PrincipalService
   ) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1a138f597cc6fdd29b68ab676ba65cf8f6d3e74
     //this.baseUrl = 'http://localhost:3000/api/eventos';
   }
 
@@ -33,6 +38,14 @@ export class MainComponent implements OnInit {
     this.corredoresPorEvento.push(pCorredor)
     console.log(this.corredoresPorEvento);
 
+  }
+
+  async onChange($event) {
+    if ($event.target.value === -1) {
+      this.arrayEventos = await this.principalService.getAllEvents()
+    } else {
+      this.arrayEventos = await this.principalService.getByEvent($event.target.value)
+    }
   }
 
 }

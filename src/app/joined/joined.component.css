@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+}
+
+.apuntado{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.apuntado .okey{
+    width: 60%;
+}
+
+.apuntado .okey img{
+    width: 77%;
+    height: 300px;
+}
+
+.apuntado .mensaje{
+    width: 30%;
+}

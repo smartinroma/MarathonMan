@@ -13,6 +13,7 @@ import { ComentariosComponent } from './comentarios/comentarios.component';
 import { RegistroFormularioComponent } from './registro-formulario/registro-formulario.component';
 import { IntroComponent } from './intro/intro.component';
 import { LoginComponent } from './login/login.component';
+import { JoinedComponent } from './joined/joined.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     ComentariosComponent,
     RegistroFormularioComponent,
     IntroComponent,
-    LoginComponent
+    LoginComponent,
+    JoinedComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ export interface Event {
   hora: string;
   zona: string;
   imagen: string;
+  id: number;
 }
 
 
@@ -55,15 +56,14 @@ export class PrincipalService {
   }
 
 
-  joinEvento(pEventoId, pCorredorId): Promise<any> {
+  joinEvento(pEventoId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Authorization": localStorage.getItem('token_marathon')
       })
     }
     const body = {
-      evento_id: pEventoId,
-      corredor_id: pCorredorId
+      eventoId: pEventoId
     }
     return this.httpClient.post<any>(this.baseUrl + "/joined", body, httpOptions).toPromise();
   }

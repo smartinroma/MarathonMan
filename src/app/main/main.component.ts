@@ -35,9 +35,9 @@ export class MainComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  async onClickApuntarse(pEventoId, pCorredorId) {
+  async onClickApuntarse(pEventoId) {
     //al hacer click, con el usuario logado, se agrega el usuario al evento
-    const apuntado = this.principalService.joinEvento(pEventoId, pCorredorId)
+    const apuntado = this.principalService.joinEvento(pEventoId)
     console.log(apuntado);
 
   }

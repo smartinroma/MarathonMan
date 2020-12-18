@@ -36,3 +36,11 @@
 .muro .comentarios input{
     margin: 5px;
 }
+
+.misComentarios {
+    background-color:  #e5e8e8 ;
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+}

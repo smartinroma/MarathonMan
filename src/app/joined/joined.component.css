@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 h1{
     text-align: center;
+    font-family: 'Special Elite', cursive;
 }
 
 .apuntado{
     width: 80%;
     margin: auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .apuntado .okey{
@@ -19,4 +24,7 @@ h1{
 
 .apuntado .mensaje{
     width: 30%;
+    background-color: #e5e8e8;
+    border-radius: 10px;
+    padding: 10px;
 }

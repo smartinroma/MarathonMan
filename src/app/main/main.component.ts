@@ -56,7 +56,8 @@ export class MainComponent implements OnInit {
     } else {
       this.arrayEventos = await this.principalService.getEventoByNivel($event.target.value)
     }
-
   }
+
+
 
 }

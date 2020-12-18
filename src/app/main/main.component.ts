@@ -35,15 +35,10 @@ export class MainComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  async onClickApuntarse(pCorredor) {
+  async onClickApuntarse(pEventoId, pCorredorId) {
     //al hacer click, con el usuario logado, se agrega el usuario al evento
-    this.perfilService.getPerfilLogado()
-      .then(response => {
-        this.corredoresPorEvento.push(pCorredor)
-        //console.log(response);
-      })
-      .catch(error => console.log(error))
-    console.log(this.corredoresPorEvento);
+    const apuntado = this.principalService.joinEvento(pEventoId, pCorredorId)
+    console.log(apuntado);
 
   }
 

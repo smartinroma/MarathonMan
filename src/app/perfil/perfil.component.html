@@ -2,10 +2,10 @@
     <div class="perfil">
         <div class="datos">
             <img src="https://thispersondoesnotexist.com/image">
-            <p><strong>Nombre:</strong> {{corredor.nombre}}</p>
-            <p><strong>Apellidos:</strong> {{corredor.apellidos}}</p>
-            <p><strong>Zona:</strong> {{corredor.zona}}</p>
-            <p><strong>Nivel:</strong> {{corredor.nivel}}</p>
+            <p><strong>Nombre:</strong> {{corredor?.nombre}}</p>
+            <p><strong>Apellidos:</strong> {{corredor?.apellidos}}</p>
+            <p><strong>Zona:</strong> {{corredor?.zona}}</p>
+            <p><strong>Nivel:</strong> {{corredor?.nivel}}</p>
         </div>
         <div class="muro">
             <form [formGroup]="formulario" (ngSubmit)="onSubmitPublicado()">
@@ -24,7 +24,10 @@
         <div class="misComentarios">
             <h3>Comentarios que has publicado</h3>
             <div class="publicados" *ngFor="let coment of comentario">
-                <p>{{comentario}}</p>
+                <h4><strong>{{coment.titulo}}</strong></h4>
+                <p>{{coment.comentario}}</p>
+                <button (click)="onBorrar(coment.id)" class="btn btn-sm btn-danger"><img
+                        src="../../assets/images/cubo.png" alt=""></button>
             </div>
         </div>
     </div>

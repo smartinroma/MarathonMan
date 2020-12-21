@@ -2,12 +2,21 @@
     <div class="hero">
         <img src="../../assets/images/heroMain.jpg" alt="">
     </div>
-    <div class="filtro">
-        <p>Buscar por nivel: </p>
-        <select (change)="onChange($event)">
-            <option value="todos" selected>Elige un nivel</option>
-            <option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option>
-        </select>
+    <div class="filtros">
+        <div class="filtro">
+            <p>Buscar por nivel: </p>
+            <select (change)="onChange($event)">
+                <option value="todos" selected>Elige un nivel</option>
+                <option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option>
+            </select>
+        </div>
+        <div class="filtro">
+            <p>Buscar por zona: </p>
+            <select (change)="onChange2($event)">
+                <option value="todos" selected>Elige una zona</option>
+                <option [value]="zona" *ngFor="let zona of zonas">{{zona}}</option>
+            </select>
+        </div>
     </div>
     <div class="eventos">
         <div class="carreras" *ngFor="let evento of arrayEventos">

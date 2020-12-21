@@ -12,8 +12,10 @@ import { Event, PrincipalService } from '../services/principal.service';
 export class MainComponent implements OnInit {
 
   arrayEventos: Event[];
+  arrayZonas: Event[];
   niveles: string[];
   corredoresPorEvento: Usuario[];
+  zonas: string[];
 
   constructor(
     private principalService: PrincipalService,
@@ -21,8 +23,9 @@ export class MainComponent implements OnInit {
     private router: Router
   ) {
 
-    this.arrayEventos = []
-    this.corredoresPorEvento = []
+    this.arrayEventos = [];
+    this.corredoresPorEvento = [];
+    this.arrayZonas = [];
 
   }
 
@@ -30,9 +33,28 @@ export class MainComponent implements OnInit {
     this.principalService.getAllEvents()
       .then(response => {
         this.arrayEventos = response;
+
         const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
         const setTemporal = new Set(arrTemporal)
         this.niveles = [...setTemporal];
+
+        /* const arrTemporal2 = this.arrayEventos.map(evento => evento.zona)
+        const setTemporal2 = new Set(arrTemporal2)
+        this.zonas = [...setTemporal2]; */
+      })
+      .catch(error => console.log(error));
+
+    this.principalService.getAllEvents()
+      .then(response => {
+        this.arrayZonas = response;
+
+        /* const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
+        const setTemporal = new Set(arrTemporal)
+        this.niveles = [...setTemporal]; */
+
+        const arrTemporal2 = this.arrayZonas.map(evento => evento.zona)
+        const setTemporal2 = new Set(arrTemporal2)
+        this.zonas = [...setTemporal2];
       })
       .catch(error => console.log(error));
   }
@@ -57,6 +79,17 @@ export class MainComponent implements OnInit {
       this.arrayEventos = await this.principalService.getAllEvents()
     } else {
       this.arrayEventos = await this.principalService.getEventoByNivel($event.target.value)
+    }
+  }
+
+  async onChange2($event) {
+    console.log(this.zonas);
+    console.log($event.target.value);
+
+    if ($event.target.value === 'todos') {
+      this.arrayZonas = await this.principalService.getAllEvents()
+    } else {
+      this.arrayZonas = await this.principalService.getEventoByZona($event.target.value)
     }
   }
 

@@ -56,6 +56,14 @@ export class PrincipalService {
     return this.httpClient.get<Event[]>(this.baseUrl + "/nivel/" + pNivel, httpOptions).toPromise();
   }
 
+  getEventoByZona(pZona: string): Promise<Event[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.get<Event[]>(this.baseUrl + "/zona/" + pZona, httpOptions).toPromise();
+  }
 
   joinEvento(pEventoId): Promise<any> {
     const httpOptions = {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PerfilService, Usuario } from '../services/perfil.service';
 
@@ -11,12 +12,18 @@ export class PerfilComponent implements OnInit {
 
   comentario: string;
   corredor: Usuario;
+  formulario: FormGroup;
 
   constructor(
     private perfilService: PerfilService,
     private router: Router
   ) {
     this.comentario = '';
+
+    this.formulario = new FormGroup({
+      titulo: new FormControl(),
+      comentario: new FormControl()
+    })
 
 
   }
@@ -34,8 +41,18 @@ export class PerfilComponent implements OnInit {
 
 
 
-  async onSubmitComentario() {
-    //await this.perfilService.addComentario(this.comentario)
+  async onSubmitPublicado() {
+    const mensaje = await this.perfilService.addPublicado(this.formulario.value);
+    console.log(mensaje);
+    alert('Comentario publicado correctamente')
+    this.formulario.reset();
+  }
+
+  async onBorrar(pId) {
+    const mensaje = await this.perfilService.borrarPublicado(pId);
+    console.log(mensaje);
+    alert('Comentario borrado correctamente');
+
   }
 
 

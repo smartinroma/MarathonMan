@@ -14,6 +14,12 @@ export interface Usuario {
   zona: string;
 }
 
+export interface Publicacion {
+  id: number;
+  titulo: string;
+  comentario: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +29,7 @@ export class PerfilService {
   //arrayPublicaciones: string[]
   private baseUrl: string;
   private baseUrl2: string;
+  private baseUrl3: string;
 
   constructor(
     private httpClient: HttpClient
@@ -32,6 +39,7 @@ export class PerfilService {
 
     this.baseUrl = 'http://localhost:3000/api/corredores';
     this.baseUrl2 = 'http://localhost:3000/api/corredores/registro';
+    this.baseUrl3 = 'http://localhost:3000/api/publicados'
   }
 
   /* getAllPublicaciones() {
@@ -95,6 +103,33 @@ export class PerfilService {
     } else {
       return false;
     }
+  }
+
+  getAllPublicados(): Promise<Publicacion[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.get<Publicacion[]>(this.baseUrl3, httpOptions).toPromise();
+  }
+
+  addPublicado(pComentario): Promise<string> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.post<string>(this.baseUrl3, pComentario, httpOptions).toPromise();
+  }
+
+  borrarPublicado(pId): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-type": "application/json"
+      })
+    }
+    return this.httpClient.delete<any>(this.baseUrl3 + "/" + pId, httpOptions).toPromise();
   }
 
 }

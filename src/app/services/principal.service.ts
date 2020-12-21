@@ -9,6 +9,7 @@ export interface Event {
   zona: string;
   imagen: string;
   id: number;
+  corredores: number;
 }
 
 

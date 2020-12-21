@@ -24,11 +24,10 @@
             <p>Hora: {{ evento.hora }}</p>
             <p>Zona: {{ evento.zona }}</p>
             <p>Creado por:</p>
-            <button class="btn btn-sm btn-secondary" (click)="onClickApuntarse(evento.id)"
-                [routerLink]="['/joined']">Apuntarse</button>
+            <button class="btn btn-sm btn-secondary" (click)="onClickApuntarse(evento.id)">Apuntarse</button>
             <br>
             <br>
-            <p>Corredores apuntados: {{corredoresPorEvento}}</p>
+            <p>Corredores apuntados: {{evento.corredores}}</p>
         </div>
     </div>
 </div>

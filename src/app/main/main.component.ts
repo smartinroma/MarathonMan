@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PerfilService, Usuario } from '../services/perfil.service';
 
 import { Event, PrincipalService } from '../services/principal.service';
@@ -16,7 +17,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private principalService: PrincipalService,
-    private perfilService: PerfilService
+    private perfilService: PerfilService,
+    private router: Router
   ) {
 
     this.arrayEventos = []
@@ -37,8 +39,13 @@ export class MainComponent implements OnInit {
 
   async onClickApuntarse(pEventoId) {
     //al hacer click, con el usuario logado, se agrega el usuario al evento
-    const apuntado = this.principalService.joinEvento(pEventoId)
+    const apuntado = await this.principalService.joinEvento(pEventoId)
     console.log(apuntado);
+    if (apuntado.mensaje) {
+      this.router.navigate(['/joined']);
+    } else {
+      alert(apuntado.error)
+    }
 
   }
 

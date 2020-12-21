@@ -9,8 +9,6 @@
                 <option value="todos" selected>Elige un nivel</option>
                 <option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option>
             </select>
-        </div>
-        <div class="filtro">
             <p>Buscar por zona: </p>
             <select (change)="onChange2($event)">
                 <option value="todos" selected>Elige una zona</option>

@@ -53,9 +53,12 @@
 .filtro select {
     margin-left: 25px;
     padding: 5px;
+    margin-right: 50px;
+    width: 20%;
 }
 
 .filtro p {
     color: black;
     font-weight: bold;
+    
 }

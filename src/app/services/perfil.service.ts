@@ -108,10 +108,10 @@ export class PerfilService {
   getAllPublicados(): Promise<Publicacion[]> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        "Authorization": localStorage.getItem('token_marathon')
       })
     }
-    return this.httpClient.get<Publicacion[]>(this.baseUrl3, httpOptions).toPromise();
+    return this.httpClient.get<Publicacion[]>(this.baseUrl3 + "/:corredorId", httpOptions).toPromise();
   }
 
   addPublicado(pComentario): Promise<string> {

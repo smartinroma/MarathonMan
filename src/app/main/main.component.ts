@@ -46,13 +46,13 @@ export class MainComponent implements OnInit {
 
     this.principalService.getAllEvents()
       .then(response => {
-        this.arrayZonas = response;
+        this.arrayEventos = response;
 
         /* const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
         const setTemporal = new Set(arrTemporal)
         this.niveles = [...setTemporal]; */
 
-        const arrTemporal2 = this.arrayZonas.map(evento => evento.zona)
+        const arrTemporal2 = this.arrayEventos.map(evento => evento.zona)
         const setTemporal2 = new Set(arrTemporal2)
         this.zonas = [...setTemporal2];
       })
@@ -87,9 +87,9 @@ export class MainComponent implements OnInit {
     console.log($event.target.value);
 
     if ($event.target.value === 'todos') {
-      this.arrayZonas = await this.principalService.getAllEvents()
+      this.arrayEventos = await this.principalService.getAllEvents()
     } else {
-      this.arrayZonas = await this.principalService.getEventoByZona($event.target.value)
+      this.arrayEventos = await this.principalService.getEventoByZona($event.target.value)
     }
   }
 

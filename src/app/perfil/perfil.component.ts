@@ -46,13 +46,20 @@ export class PerfilComponent implements OnInit {
     console.log(mensaje);
     //alert('Comentario publicado correctamente')
     this.formulario.reset();
+    this.perfilService.getPerfilLogado()
+      .then(response => {
+        this.corredor = response
+      })
+      .catch(error => {
+        console.log(error);
+
+      })
   }
 
   async onBorrar(pId) {
     const mensaje = await this.perfilService.borrarPublicado(pId);
     console.log(mensaje);
-    alert('Comentario borrado correctamente');
-
+    //alert('Comentario borrado correctamente');
   }
 
 

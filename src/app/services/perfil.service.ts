@@ -12,6 +12,7 @@ export interface Usuario {
   telefono: number;
   nivel: string;
   zona: string;
+  comentarios: any[];
 }
 
 export interface Publicacion {
@@ -111,22 +112,26 @@ export class PerfilService {
         "Authorization": localStorage.getItem('token_marathon')
       })
     }
-    return this.httpClient.get<Publicacion[]>(this.baseUrl3 + "/:corredorId", httpOptions).toPromise();
+    return this.httpClient.get<Publicacion[]>(this.baseUrl3 + "/perfil", httpOptions).toPromise();
   }
 
   addPublicado(pComentario): Promise<string> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token_marathon')
       })
     }
+    console.log(pComentario);
+
     return this.httpClient.post<string>(this.baseUrl3, pComentario, httpOptions).toPromise();
   }
 
   borrarPublicado(pId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-type": "application/json"
+        "Content-type": "application/json",
+        "Authorization": localStorage.getItem('token_marathon')
       })
     }
     return this.httpClient.delete<any>(this.baseUrl3 + "/" + pId, httpOptions).toPromise();

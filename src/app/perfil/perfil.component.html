@@ -23,7 +23,7 @@
         </div>
         <div class="misComentarios">
             <h3>Comentarios que has publicado</h3>
-            <div class="publicados" *ngFor="let coment of comentario">
+            <div class="publicados" *ngFor="let coment of corredor?.comentarios">
                 <h4><strong>{{coment.titulo}}</strong></h4>
                 <p>{{coment.comentario}}</p>
                 <button (click)="onBorrar(coment.id)" class="btn btn-sm btn-danger"><img

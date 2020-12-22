@@ -45,3 +45,13 @@
     margin: 10px;
     border-radius: 10px;
 }
+
+.misComentarios .publicados button {
+    width: 3%;
+    float: right;
+    margin-top: -50px;
+}
+
+.misComentarios .publicados img{
+    width: 90%;
+}

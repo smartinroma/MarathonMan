@@ -34,14 +34,22 @@ export class ComentariosComponent implements OnInit {
   async onSubmit() {
     const mensaje = await this.comentariosService.addComentario(this.formulario.value);
     console.log(mensaje);
-    alert('Comentario publicado correctamente')
     this.formulario.reset();
+    this.comentariosService.getAllComentarios()
+      .then(response => {
+        this.arrayComentarios = response;
+      })
+      .catch(error => console.log(error));
   }
 
   async onBorrar(pId) {
     const mensaje = await this.comentariosService.borrarComentario(pId);
     console.log(mensaje);
-    alert('Comentario borrado correctamente');
+    this.comentariosService.getAllComentarios()
+      .then(response => {
+        this.arrayComentarios = response;
+      })
+      .catch(error => console.log(error));
   }
 
 }

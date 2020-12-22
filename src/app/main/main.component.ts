@@ -38,25 +38,25 @@ export class MainComponent implements OnInit {
         const setTemporal = new Set(arrTemporal)
         this.niveles = [...setTemporal];
 
-        /* const arrTemporal2 = this.arrayEventos.map(evento => evento.zona)
-        const setTemporal2 = new Set(arrTemporal2)
-        this.zonas = [...setTemporal2]; */
-      })
-      .catch(error => console.log(error));
-
-    this.principalService.getAllEvents()
-      .then(response => {
-        this.arrayEventos = response;
-
-        /* const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
-        const setTemporal = new Set(arrTemporal)
-        this.niveles = [...setTemporal]; */
-
         const arrTemporal2 = this.arrayEventos.map(evento => evento.zona)
         const setTemporal2 = new Set(arrTemporal2)
         this.zonas = [...setTemporal2];
       })
       .catch(error => console.log(error));
+
+    /* this.principalService.getAllEvents()
+      .then(response => {
+        this.arrayEventos = response;
+
+        const arrTemporal = this.arrayEventos.map(evento => evento.nivel)
+        const setTemporal = new Set(arrTemporal)
+        this.niveles = [...setTemporal];
+
+        const arrTemporal2 = this.arrayEventos.map(evento => evento.zona)
+        const setTemporal2 = new Set(arrTemporal2)
+        this.zonas = [...setTemporal2];
+      })
+      .catch(error => console.log(error)); */
   }
 
   async onClickApuntarse(pEventoId) {

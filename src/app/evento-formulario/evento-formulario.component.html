@@ -47,7 +47,14 @@
         </div>
         <div class="form-group">
             <label>Zona</label>
-            <input type="text" formControlName="zona" class="form-control">
+            <select formControlName="zona">Elige un nivel
+                <option value="-1" selected>Elige una zona</option>
+                <option value="Madrid Capital">Madrid Capital</option>
+                <option value="Madrid Este">Madrid Este</option>
+                <option value="Madrid Norte">Madrid Norte</option>
+                <option value="Madrid Oeste">Madrid Oeste</option>
+                <option value="Madrid Sur">Madrid Sur</option>
+            </select>
             <p class="text-danger"
                 *ngIf="formulario.get('zona').hasError('required') && formulario.get('zona').touched">
                 El campo zona es obligatorio

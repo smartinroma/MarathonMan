@@ -1,22 +1,27 @@
-<div class="bloque">
-    <div class="nuevo">
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label>Titulo</label>
-                <input type="text" placeholder="Escribe un titulo" class="form-control" formControlName="titulo">
+<div class="wrapper">
+    <div class="bloque">
+        <div class="nuevo">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Titulo</label>
+                    <input type="text" placeholder="Escribe un titulo" class="form-control" formControlName="titulo">
+                </div>
+                <div class="form-group">
+                    <label>Comentario</label>
+                    <input type="text" placeholder="Escribe un comentario" id="comentario" class="form-control"
+                        formControlName="comentario">
+                </div>
+                <input type="submit" value="Publicar" id="boton" class="btn btn-secondary">
+            </form>
+        </div>
+        <div class="gente">
+            <h3>COMENTARIOS PUBLICADOS</h3>
+            <div class="publicados" *ngFor="let coment of arrayComentarios">
+                <h4><strong>{{coment.titulo}}</strong></h4>
+                <p>{{coment.comentario}}</p>
+                <button (click)="onBorrar(coment.id)" class="btn btn-sm btn-danger"><img
+                        src="../../assets/images/cubo.png"></button>
             </div>
-            <div class="form-group">
-                <label>Comentario</label>
-                <input type="text" placeholder="Escribe un comentario" id="comentario" class="form-control"
-                    formControlName="comentario">
-            </div>
-            <input type="submit" value="Publicar" id="boton" class="btn btn-secondary">
-        </form>
-    </div>
-    <div class="publicados" *ngFor="let coment of arrayComentarios">
-        <h4><strong>{{coment.titulo}}</strong></h4>
-        <p>{{coment.comentario}}</p>
-        <button (click)="onBorrar(coment.id)" class="btn btn-sm btn-danger"><img src="../../assets/images/cubo.png"
-                alt=""></button>
+        </div>
     </div>
 </div>

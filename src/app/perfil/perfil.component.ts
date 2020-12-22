@@ -60,6 +60,14 @@ export class PerfilComponent implements OnInit {
     const mensaje = await this.perfilService.borrarPublicado(pId);
     console.log(mensaje);
     //alert('Comentario borrado correctamente');
+    this.perfilService.getPerfilLogado()
+      .then(response => {
+        this.corredor = response
+      })
+      .catch(error => {
+        console.log(error);
+
+      })
   }
 
 

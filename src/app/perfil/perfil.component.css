@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-.wrapper{
-    height: 100vh;
-}
-
 .perfil {
     display: flex;
     flex-wrap: wrap;
@@ -29,7 +25,7 @@
 .muro {
     background-color: #e5e8e8;
     border-radius: 10px;
-    width: 77%;
+    width: 76.8%;
     margin: 10px;
     padding: 10px;
     font-family: 'Special Elite', cursive;

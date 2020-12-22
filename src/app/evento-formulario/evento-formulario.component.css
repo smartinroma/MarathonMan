@@ -4,8 +4,8 @@
     background-size: cover;
     background-color: #666666;
     background-blend-mode: multiply;
-    height: 100%;
-    padding: 20px;
+    padding: 100px;
+    height: 90vh;
 }
 
 form{
